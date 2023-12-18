@@ -53,7 +53,7 @@ class PopularCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CircleAvatar(
-                      radius: 12,
+                      radius: 20,
                       child: Text(
                         recipe!.recipeMaker[0],
                         style: TextStyle(color: recipe!.startColor),
@@ -70,14 +70,6 @@ class PopularCard extends StatelessWidget {
                         color: Color.fromARGB(255, 0, 0, 0),
                       ),
                     ),
-                    const Text(
-                      'Seafood',
-                      style: TextStyle(
-                        fontSize: 14,
-                        // fontWeight: FontWeight.w600,
-                        color: Color.fromARGB(255, 117, 117, 117),
-                      ),
-                    ),
                     Row(
                       children: [
                         CircleAvatar(
@@ -87,7 +79,7 @@ class PopularCard extends StatelessWidget {
                           backgroundColor: Colors.transparent,
                         ),
                         const Text(
-                          '30-35 minute',
+                          '124',
                           style: TextStyle(
                             fontSize: 14,
                             // fontWeight: FontWeight.w600,
@@ -105,7 +97,7 @@ class PopularCard extends StatelessWidget {
                           backgroundColor: Colors.transparent,
                         ),
                         const Text(
-                          'Medium',
+                          '41391',
                           style: TextStyle(
                             fontSize: 14,
                             // fontWeight: FontWeight.w600,

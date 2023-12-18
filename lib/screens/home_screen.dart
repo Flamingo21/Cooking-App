@@ -41,7 +41,8 @@ class _HomeSreenState extends State<HomeSreen> {
                       ),
                       SizedBox(
                         height: 40,
-                        child: SvgPicture.asset('assets/svg/profile-svgrepo-com.svg'),
+                        child: SvgPicture.asset(
+                            'assets/svg/profile-svgrepo-com.svg'),
                       ),
                     ],
                   ),
@@ -51,6 +52,37 @@ class _HomeSreenState extends State<HomeSreen> {
                       fontSize: 16,
                       // fontWeight: FontWeight.w600,
                       color: Color.fromARGB(255, 117, 117, 117),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 32.5,
+                vertical: 10,
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    height: 170,
+                    decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(20 as Radius)),
+                    child: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "hallo",
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                          ),
+                        )
+                      ],
                     ),
                   ),
                 ],
@@ -66,11 +98,11 @@ class _HomeSreenState extends State<HomeSreen> {
                 children: [
                   Text(
                     'Popular recipes',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700,
-                          color: Color(0xFF0E0E2D),
-                        ),
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xFF0E0E2D),
+                    ),
                   ),
                   Text(
                     'See all',
@@ -97,11 +129,11 @@ class _HomeSreenState extends State<HomeSreen> {
                 children: [
                   Text(
                     'Popular Creator',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700,
-                          color: Color(0xFF0E0E2D),
-                        ),
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xFF0E0E2D),
+                    ),
                   ),
                   Text(
                     'See all',

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:recipesapp/components/recipe_card.dart';
+import 'package:recipesapp/components/popular_card.dart';
 import 'package:recipesapp/models/recipe.dart';
 
-class PageViewRecipeList extends StatefulWidget {
-  const PageViewRecipeList({Key? key}) : super(key: key);
+class PopularCreatorList extends StatefulWidget {
+  const PopularCreatorList({Key? key}) : super(key: key);
 
   @override
-  State<PageViewRecipeList> createState() => _PageViewRecipeListState();
+  State<PopularCreatorList> createState() => _PopularCreatorListState();
 }
 
-class _PageViewRecipeListState extends State<PageViewRecipeList> {
+class _PopularCreatorListState extends State<PopularCreatorList> {
   final PageController pageController = PageController(viewportFraction: 0.75);
 
   int currentPage = 0;
@@ -17,7 +17,7 @@ class _PageViewRecipeListState extends State<PageViewRecipeList> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 320,
+      height: 200,
       child: PageView.builder(
         padEnds: false,
         controller: pageController,
@@ -26,8 +26,8 @@ class _PageViewRecipeListState extends State<PageViewRecipeList> {
         itemBuilder: (context, index) {
           bool active = index == currentPage;
           return Opacity(
-            opacity: currentPage == index? 1.0: 0.5,
-            child: RecipeCard(
+            opacity: currentPage == index? 1.0: 0.7,
+            child: PopularCard(
               active: active,
               index: index,
               recipe: recipes[index],
