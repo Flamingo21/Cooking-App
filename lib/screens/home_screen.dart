@@ -62,30 +62,45 @@ class _HomeSreenState extends State<HomeSreen> {
                 horizontal: 32.5,
                 vertical: 10,
               ),
-              child: Row(
-                children: [
-                  Container(
-                    height: 170,
-                    decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(20 as Radius)),
-                    child: const Column(
+              child: Container(
+                padding: const EdgeInsets.only(
+                  left: 16,
+                  right: 16,
+                  top: 10,
+                ),
+                height: 170,
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                child: const Row(
+                  children: [
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "hallo",
+                          "Recipes recomedation",
                           overflow: TextOverflow.ellipsis,
                           maxLines: 2,
                           style: TextStyle(
                             fontSize: 18,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w500,
                             color: Color.fromARGB(255, 0, 0, 0),
                           ),
-                        )
+                        ),
+                        Text(
+                          'Get your personalized recipe recommendation in a 5 step',
+                          overflow: TextOverflow.clip,
+                          maxLines: 4,
+                          style: TextStyle(
+                            fontSize: 15,
+                            // fontWeight: FontWeight.w600,
+                            color: Color.fromARGB(255, 117, 117, 117),
+                          ),
+                        ),
                       ],
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             const Padding(
@@ -147,6 +162,9 @@ class _HomeSreenState extends State<HomeSreen> {
               ),
             ),
             const PopularCreatorList(),
+            const SizedBox(
+              height: 30.52,
+            ),
           ],
         ),
       ),
