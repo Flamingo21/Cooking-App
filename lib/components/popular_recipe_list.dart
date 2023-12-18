@@ -1,112 +1,56 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:recipesapp/components/popular_card.dart';
 import 'package:recipesapp/models/recipe.dart';
 
-class PopularRecipeList extends StatefulWidget {
-  const PopularRecipeList({Key? key}) : super(key: key);
+class PopularCreatorList extends StatefulWidget {
+  const PopularCreatorList({Key? key}) : super(key: key);
 
   @override
-  State<PopularRecipeList> createState() => _PopularRecipeListState();
+  State<PopularCreatorList> createState() => _PopularCreatorListState();
 }
 
-class _PopularRecipeListState extends State<PopularRecipeList> {
+class _PopularCreatorListState extends State<PopularCreatorList> {
+  final PageController pageController = PageController(viewportFraction: 0.75);
+
+  int currentPage = 0;
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 32),
-      child: ListView.builder(
-        physics: const NeverScrollableScrollPhysics(),
+    return SizedBox(
+      height: 200,
+      child: PageView.builder(
+        padEnds: false,
+        controller: pageController,
         itemCount: recipes.length,
-        shrinkWrap: true,
+        physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) {
-          return Container(
-            height: 98,
-            margin: const EdgeInsets.only(bottom: 16),
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(14),
-                color: Colors.transparent),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 53.43,
-                        width: 73,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage(
-                              'assets/images/${recipes[index].recipeImage}',
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 18.56,
-                      ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              recipes[index].recipeName,
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 1,
-                              style: const TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w500,
-                                color: Color(0xFF0E0E2D),
-                              ),
-                            ),
-                            Text(
-                              '${recipes[index].recipeMaker}\'s recipe',
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 1,
-                              style: const TextStyle(
-                                fontSize: 14,
-                                color: Color(0xFF9A9DB0),
-                              ),
-                            )
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    CircleAvatar(
-                      radius: 15,
-                      child: Text(
-                        recipes[index].recipeMaker[0],
-                        style: TextStyle(color: recipes[index].startColor),
-                      ),
-                      backgroundColor: recipes[index].endColor,
-                    ),
-                    const Spacer(),
-                    Row(
-                      children: [
-                        SvgPicture.asset('assets/svg/icon-share-grey.svg'),
-                        const SizedBox(
-                          width: 7.65,
-                        ),
-                        SvgPicture.asset('assets/svg/icon-bookmark-grey.svg'),
-                      ],
-                    ),
-                  ],
-                )
-              ],
+          bool active = index == currentPage;
+          return Opacity(
+            opacity: currentPage == index? 1.0: 0.5,
+            child: PopularCard(
+              active: active,
+              index: index,
+              recipe: recipes[index],
             ),
           );
         },
       ),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    pageController.addListener(() {
+      int position = pageController.page!.round();
+      if (currentPage != position) {
+        {
+          setState(() {
+            currentPage = position;
+          });
+        }
+      }
+    });
   }
 }
