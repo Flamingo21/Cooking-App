@@ -9,6 +9,6 @@ Oleh :
 Gery Jonathan Manurung
 211402137
 
-##Screenshot
+## Screenshot
 ![alt text](https://github.com/Flamingo21/Cooking-App/blob/main/readmeImg/first.png?raw=true)
 ![alt text](https://github.com/Flamingo21/Cooking-App/blob/main/readmeImg/second.png?raw=true)
