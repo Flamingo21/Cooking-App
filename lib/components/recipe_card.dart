@@ -96,13 +96,13 @@ class RecipeCard extends StatelessWidget {
                     Row(
                       children: [
                         CircleAvatar(
-                          radius: 12,
+                          radius: 9,
                           child: SvgPicture.asset(
-                              'assets/svg/icon-share-grey.svg'),
+                              'assets/svg/timer-with-arrow-svgrepo-com.svg'),
                           backgroundColor: Colors.transparent,
                         ),
                         const Text(
-                          '30-35 minute',
+                          ' 30-35 minute',
                           style: TextStyle(
                             fontSize: 14,
                             // fontWeight: FontWeight.w600,
@@ -114,13 +114,13 @@ class RecipeCard extends StatelessWidget {
                     Row(
                       children: [
                         CircleAvatar(
-                          radius: 12,
+                          radius: 10,
                           child: SvgPicture.asset(
-                              'assets/svg/icon-share-grey.svg'),
+                              'assets/svg/badge1-svgrepo-com.svg'),
                           backgroundColor: Colors.transparent,
                         ),
                         const Text(
-                          'Medium',
+                          ' Medium',
                           style: TextStyle(
                             fontSize: 14,
                             // fontWeight: FontWeight.w600,

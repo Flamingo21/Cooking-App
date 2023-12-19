@@ -79,7 +79,7 @@ class PopularCard extends StatelessWidget {
                           backgroundColor: Colors.transparent,
                         ),
                         const Text(
-                          '124',
+                          ' 124',
                           style: TextStyle(
                             fontSize: 14,
                             // fontWeight: FontWeight.w600,
@@ -91,13 +91,13 @@ class PopularCard extends StatelessWidget {
                     Row(
                       children: [
                         CircleAvatar(
-                          radius: 12,
+                          radius: 10,
                           child: SvgPicture.asset(
-                              'assets/svg/icon-share-grey.svg'),
+                              'assets/svg/like-svgrepo-com.svg'),
                           backgroundColor: Colors.transparent,
                         ),
                         const Text(
-                          '41391',
+                          ' 41391',
                           style: TextStyle(
                             fontSize: 14,
                             // fontWeight: FontWeight.w600,

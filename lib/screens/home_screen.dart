@@ -25,13 +25,13 @@ class _HomeSreenState extends State<HomeSreen> {
                 horizontal: 32.5,
                 vertical: 16,
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         'Hello Gery',
                         style: TextStyle(
                           fontSize: 30,
@@ -39,20 +39,23 @@ class _HomeSreenState extends State<HomeSreen> {
                           color: Color(0xFF0E0E2D),
                         ),
                       ),
-                      SizedBox(
-                        height: 40,
-                        child: SvgPicture.asset(
-                            'assets/svg/profile-svgrepo-com.svg'),
+                      Text(
+                        'What do you want to cook today?',
+                        style: TextStyle(
+                          fontSize: 16,
+                          // fontWeight: FontWeight.w600,
+                          color: Color.fromARGB(255, 117, 117, 117),
+                        ),
                       ),
                     ],
                   ),
-                  const Text(
-                    'What do you want to cook today?',
-                    style: TextStyle(
-                      fontSize: 16,
-                      // fontWeight: FontWeight.w600,
-                      color: Color.fromARGB(255, 117, 117, 117),
-                    ),
+                  SizedBox(
+                    height: 80,
+                    child:  Image.asset(
+                          'assets/images/account.png',
+                          width: 40,
+                          height: 40,
+                        ),
                   ),
                 ],
               ),
@@ -66,39 +69,62 @@ class _HomeSreenState extends State<HomeSreen> {
                 padding: const EdgeInsets.only(
                   left: 16,
                   right: 16,
-                  top: 10,
+                  top: 15,
                 ),
                 height: 170,
-                width: ,
                 decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.all(Radius.circular(20))),
-                child: const Row(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    Row(
                       children: [
-                        Text(
-                          "Recipes recomedation",
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            color: Color.fromARGB(255, 0, 0, 0),
+                        const Flexible(
+                          flex: 4,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Recipes recomedation",
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 2,
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                  color: Color.fromARGB(255, 0, 0, 0),
+                                ),
+                              ),
+                              Text(
+                                'Get your personalized recipe recommendation in a 5 step',
+                                overflow: TextOverflow.clip,
+                                maxLines: 3,
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  // fontWeight: FontWeight.w600,
+                                  color: Color.fromARGB(255, 117, 117, 117),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                        Text(
-                          'Get your personalized recipe recommendation in a 5 step',
-                          overflow: TextOverflow.clip,
-                          maxLines: 3,
-                          style: TextStyle(
-                            fontSize: 15,
-                            // fontWeight: FontWeight.w600,
-                            color: Color.fromARGB(255, 117, 117, 117),
-                          ),
+                        Image.asset(
+                          'assets/images/hot-soup.png',
+                          width: 60,
+                          height: 60,
                         ),
-
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        FilledButton.tonal(
+                            onPressed: () {}, child: Text('Get started')),
+                        OutlinedButton(
+                            onPressed: () {}, child: const Text('Skip')),
                       ],
                     ),
                   ],

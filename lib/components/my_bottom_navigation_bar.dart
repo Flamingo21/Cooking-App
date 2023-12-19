@@ -37,7 +37,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                   'assets/svg/icon-search-selected.svg',
                 )
               : SvgPicture.asset(
-                  'assets/svg/icon-search.svg',
+                  'assets/svg/search-svgrepo-com.svg',
                 ),
           label: 'Search',
         ),
@@ -47,7 +47,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                   'assets/svg/icon-notification-selected.svg',
                 )
               : SvgPicture.asset(
-                  'assets/svg/icon-notification.svg',
+                  'assets/svg/plus-svgrepo-com.svg',
                 ),
           label: 'Notification',
         ),
@@ -57,7 +57,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                   'assets/svg/icon-settings-selected.svg',
                 )
               : SvgPicture.asset(
-                  'assets/svg/icon-settings.svg',
+                  'assets/svg/book-svgrepo-com.svg',
                 ),
           label: 'Settings',
         ),
