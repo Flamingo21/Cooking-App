@@ -69,6 +69,7 @@ class _HomeSreenState extends State<HomeSreen> {
                   top: 10,
                 ),
                 height: 170,
+                width: ,
                 decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.all(Radius.circular(20))),
@@ -90,13 +91,14 @@ class _HomeSreenState extends State<HomeSreen> {
                         Text(
                           'Get your personalized recipe recommendation in a 5 step',
                           overflow: TextOverflow.clip,
-                          maxLines: 4,
+                          maxLines: 3,
                           style: TextStyle(
                             fontSize: 15,
                             // fontWeight: FontWeight.w600,
                             color: Color.fromARGB(255, 117, 117, 117),
                           ),
                         ),
+
                       ],
                     ),
                   ],
